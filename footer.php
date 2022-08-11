@@ -7,7 +7,7 @@
     <title>JustJoinIt</title>
 
     <!-- <link rel="stylesheet" href="css/main.css" />  -->
-    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="css/footer.css" />
 
     <script
       src="https://kit.fontawesome.com/b160ac93e6.js"
