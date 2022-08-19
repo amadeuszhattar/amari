@@ -5,13 +5,6 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "redirects":[
-      {
-        "source":"404.html",
-        "destination":"index.php",
-        "type":301
-      }
     ]
   }
 }
