@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects":[
+      {
+        "source":"index.html",
+        "destination":"index.php",
+        "type":301
+      }
+    ]
+  }
+}

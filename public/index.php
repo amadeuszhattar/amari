@@ -42,6 +42,30 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD:index.php
     </div>
+=======
+    </div>  
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyA5wWUBjjcJiOYCQ8aDjNUefkYseeP_yzY",
+    authDomain: "amari-e27bd.firebaseapp.com",
+    projectId: "amari-e27bd",
+    storageBucket: "amari-e27bd.appspot.com",
+    messagingSenderId: "545587132611",
+    appId: "1:545587132611:web:5d3d0c836a038a83baca76"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+>>>>>>> fa0fef15c12b7ef210cd48ee6971a515b50fc8bd:public/index.php
   </body>
+
 </html>
