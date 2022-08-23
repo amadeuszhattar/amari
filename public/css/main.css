@@ -5,48 +5,55 @@
 }
 
 body {
-  padding: 20px;
-  color: white;
   background-color: rgb(36, 36, 36);
+  color: rgb(255, 255, 255);
 }
 
 body * {
-  border-radius: 10px;
   display: flex;
 }
 
+/* job offer content styles */ 
+#content-container {
+  flex-direction: column;
+  flex-grow: 1;
+  height: 77px;
+}
+#content-container * {
+  border-radius: 10px;
+}
 #offer-container {
   padding: 10px;
   align-items: center;
   background-color: rgb(70, 70, 70);
-  width: 50%;
-  height: 77px;
+  margin: 5px;
 }
-
+/* image style */ 
 .offer-img-box {
   flex-grow: 1;
 }
 
 .offer-img {
-    height: auto;
-    width: 100px;
+  height: auto;
+  max-width: 100px;
 }
-
+/* offer box style */ 
 .offer-box {
   flex-grow: 19;
-  align-content: space-between;
   flex-direction: column;
 }
 
+/* top box styles */ 
 .offer-box-top {
-  justify-content: space-between;
-  align-items: center;
+
 }
 
+/* title styling */ 
 .offer-title-box {
   flex-grow: 1;
 }
 
+/* salary styling */ 
 .offer-salary {
   justify-content: flex-end;
   align-items: center;
@@ -57,26 +64,28 @@ body * {
 .offer-amount {
   color: rgb(0, 212, 0);
 }
+
+/* new button style */ 
 .offer-new {
   background-color: rgb(201, 201, 201);
   padding: 2px 5px;
   font-size: 12px;
 }
 
+/* bottom box style */ 
 .offer-box-bottom {
   margin-top: 5px;
+  justify-content: space-between;
 }
-
 .offer-box-bottom p {
-  font-size: 12px;
+  font-size: 15px;
   opacity: 0.9;
   padding: 5px 10px;
 }
 
+/* styling location box */ 
 .offer-location-box {
-  flex-grow: 1;
   align-items: center;
-  justify-content: flex-start;
 }
 
 .offer-remote {
@@ -84,12 +93,18 @@ body * {
   color: rgb(255, 169, 169);
 }
 
+/* styling tech div */
 .offer-tech-box {
-  flex-grow: 1;
-  justify-content: flex-end;
-  gap: 5%;
 }
-
 .offer-tech {
   background-color: rgb(41, 41, 41);
+  margin-left: 5px;
+}
+
+/* styling map */
+
+#gmap_canvas {
+  height: 100vh;
+  flex-grow: 1;
+  border-radius: 0px;
 }
