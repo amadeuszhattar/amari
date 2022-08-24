@@ -13,11 +13,10 @@ body * {
   display: flex;
 }
 
-/* job offer content styles */ 
+/* job offer content styles */
 #content-container {
   flex-direction: column;
-  flex-grow: 1;
-  height: 77px;
+  width: 50%;
 }
 #content-container * {
   border-radius: 10px;
@@ -28,7 +27,7 @@ body * {
   background-color: rgb(70, 70, 70);
   margin: 5px;
 }
-/* image style */ 
+/* image style */
 .offer-img-box {
   flex-grow: 1;
 }
@@ -37,53 +36,54 @@ body * {
   height: auto;
   max-width: 100px;
 }
-/* offer box style */ 
+/* offer box style */
 .offer-box {
   flex-grow: 19;
   flex-direction: column;
 }
 
-/* top box styles */ 
+/* top box styles */
 .offer-box-top {
-
-}
-
-/* title styling */ 
-.offer-title-box {
-  flex-grow: 1;
-}
-
-/* salary styling */ 
-.offer-salary {
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  gap: 5%;
-  flex-grow: 1;
+}
+
+/* title styling */
+.offer-title-box {
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* salary styling */
+.offer-salary  p {
+  margin-left: 10px;
 }
 
 .offer-amount {
   color: rgb(0, 212, 0);
 }
 
-/* new button style */ 
+/* new button style */
 .offer-new {
   background-color: rgb(201, 201, 201);
   padding: 2px 5px;
   font-size: 12px;
 }
 
-/* bottom box style */ 
+/* bottom box style */
 .offer-box-bottom {
   margin-top: 5px;
   justify-content: space-between;
 }
 .offer-box-bottom p {
-  font-size: 15px;
+  font-size: 10px;
   opacity: 0.9;
   padding: 5px 10px;
 }
 
-/* styling location box */ 
+/* styling location box */
 .offer-location-box {
   align-items: center;
 }
@@ -99,12 +99,96 @@ body * {
 .offer-tech {
   background-color: rgb(41, 41, 41);
   margin-left: 5px;
+  align-items: center;
 }
 
 /* styling map */
 
 #gmap_canvas {
   height: 100vh;
-  flex-grow: 1;
+  width: 50%;
   border-radius: 0px;
+}
+
+.map-button {
+  display: none;
+}
+
+/* mobile devices 480px max */
+@media only screen and (max-width: 480px) {
+  #gmap_canvas {
+    display: none;
+  }
+  #content-container {
+    width: auto;
+  }
+  .offer-tech-box {
+    display: none;
+  }
+  .offer-remote {
+    display: none;
+  }
+  .offer-company {
+    display: none;
+  }
+
+  .offer-title {
+    font-size: 15px;
+  }
+
+  .offer-box-bottom {
+    justify-content: flex-end;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  #gmap_canvas {
+    display: none;
+  }
+  #content-container {
+    width: 100%;
+  }
+  .offer-tech-box {
+    display: none;
+  }
+  .offer-company {
+    display: none;
+  }
+  .offer-title {
+    font-size: 20px;
+  }
+  .offer-box-bottom {
+    justify-content: flex-end;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  #gmap_canvas {
+    flex-grow: 1;
+  }
+  #content-container {
+    flex-grow: 1;
+  }
+  .offer-title {
+    font-size: 20px;
+  }
+  .offer-box-bottom p{
+    padding: 2px 5px;
+  }
+}
+
+/* map button */
+
+@media only screen and (max-width: 1024px) {
+  .map-button {
+    display: block;
+    padding: 10px 30px;
+    background-color: gray;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -2%);
+  }
 }
