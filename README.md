@@ -1,12 +1,21 @@
 # I-tak-nie-wyjdzie
+
 Team Project Test
 
-Server credentials 
+Admin Panel credentials
 
-MySQL CLI - mysql -h byuh6rgvanz7lokjxl1r-mysql.services.clever-cloud.com -P 3306 -u utd4txffbirhihp1 -p byuh6rgvanz7lokjxl1r
-Password - uhDZWAHzznQnycng3z0r
+email: amadeusz.hattar@gmail.com
+password: Amari12#
 
-User - utd4txffbirhihp1
-Database Name - byuh6rgvanz7lokjxl1r
-Host - byuh6rgvanz7lokjxl1r-mysql.services.clever-cloud.com
-Port - 3306
+Server credentials
+
+"host": "files.000webhost.com",
+"username": "amari-project",
+"password": "AaG5qrGZ5Zn(aMMc5hc6",
+
+DATABASE
+
+servername = "localhost";
+username = "id19477557*root";
+password = "9#rRqUBf!ADiLph*";
+dbname = "id19477557_amariproject";
