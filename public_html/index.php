@@ -24,6 +24,7 @@
 
 
   <body>
+  <?php include 'connection.php'?>
     <div id="main-container">
       <div id="content-container">
         <div class="offer-container-menu">
