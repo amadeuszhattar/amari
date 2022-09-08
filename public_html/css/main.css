@@ -12,19 +12,17 @@ body {
 body * {
   display: flex;
 }
-/* mmain container */ 
-#main-container{
-  padding: 0px 10px;
-}
 
-/* offer menu top styles */ 
-.offer-container-menu{
+/* main container */
+
+/* offer menu top styles */
+.offer-container-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.menu-left{
+.menu-left {
   display: flex;
   flex: 1 1 auto;
 }
@@ -33,23 +31,22 @@ body * {
   padding: 10px 20px;
 }
 
-.with-salary{
+.with-salary {
   background-color: rgb(36, 36, 36);
 }
-.all-offers{
+.all-offers {
   background-color: rgb(70, 70, 70);
 }
 
-.menu-right{
+.menu-right {
   display: flex;
   flex: 1 1 auto;
   justify-content: flex-end;
 }
 
-.menu-right p{
+.menu-right p {
   margin-right: 10px;
 }
-
 
 /* job offer content styles */
 #content-container {
@@ -91,6 +88,7 @@ body * {
 }
 
 /* title styling */
+
 .offer-title-box {
   flex: 1;
   text-overflow: ellipsis;
@@ -98,8 +96,12 @@ body * {
   overflow: hidden;
 }
 
+.offer-title {
+  font-size: 20px;
+}
+
 /* salary styling */
-.offer-salary  p {
+.offer-salary p {
   margin-left: 10px;
 }
 
@@ -143,24 +145,50 @@ body * {
 }
 
 /* styling map */
-.offer-map{
-  flex-grow: 1;
+:root {
+  --map-tiles-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg)
+    saturate(0.3) brightness(0.7);
 }
-#gmap_canvas {
+
+@media (prefers-color-scheme: dark) {
+  .map-tiles {
+    filter: var(--map-tiles-filter, none);
+  }
+}
+
+#offer-map {
+  flex-grow: 1;
+  outline: 0;
+}
+
+#map {
   height: 100vh;
   width: 100%;
   border-radius: 0px;
 }
 
-.map-button {
+#map-button {
   display: none;
 }
 
-.close-map{
-  display: none;
+#map-button:hover {
+  background-color: rgb(58, 58, 58);
 }
 
-/* styling scroll bar */ 
+#map-close {
+  display: none;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  z-index: 400;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+/* styling scroll bar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -176,9 +204,9 @@ body * {
 }
 
 /* mobile devices 480px max */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1024px) {
   #content-container {
-    width: auto;
+    width: 100%;
   }
   .offer-tech-box {
     display: none;
@@ -197,8 +225,37 @@ body * {
   .offer-box-bottom {
     justify-content: flex-end;
   }
+  #map-button {
+    display: block;
+    display: flex;
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -2%);
+  }
+
+  #map-close {
+    display: none;
+  }
+  #content-container {
+    overflow-x: unset;
+    overflow-y: unset;
+    display: block;
+  }
+
+  #offer-map {
+    display: none;
+  }
 }
-@media only screen and (min-width: 481px) and (max-width: 1024px) {
+/* @media only screen and (min-width: 481px) and (max-width: 1024px) {
   #content-container {
     width: 100%;
   }
@@ -214,7 +271,7 @@ body * {
   .offer-box-bottom {
     justify-content: flex-end;
   }
-}
+} */
 
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
   #gmap_canvas {
@@ -226,7 +283,7 @@ body * {
   .offer-title {
     font-size: 20px;
   }
-  .offer-box-bottom p{
+  .offer-box-bottom p {
     padding: 2px 5px;
   }
 }
@@ -234,38 +291,4 @@ body * {
 /* map button */
 
 @media only screen and (max-width: 1024px) {
-  .map-button {
-    display: block;
-    padding: 10px 30px;
-    background-color: gray;
-    border-radius: 20px;
-    color: white;
-    text-decoration: none;
-    position: absolute;
-    bottom: 2%;
-    left: 50%;
-    transform: translate(-50%, -2%);
-  }
-  #content-container{
-    overflow-x: unset;
-    overflow-y: unset;
-    display: block;
-  }
-  #gmap_canvas {
-    display: none;
-    width: 100%;
-  }
-  .close-map-button{
-    display: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: red;
-    position: absolute;
-    right: 2%;
-    top: 2%;
-    transform: translate(-2%, -2%);
-  }
 }
-
-
