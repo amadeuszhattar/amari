@@ -1,31 +1,44 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JustJoinIt</title>
-
-    <!-- <link rel="stylesheet" href="css/main.css" />  -->
-    <link rel="stylesheet" href="css/header.css" />
-
-    <script
-      src="https://kit.fontawesome.com/b160ac93e6.js"
-      crossorigin="anonymous"
-    ></script>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <script src="mobile.js" defer></script>
   </head>
 
+    
   <body>
-    <header>
-      <nav>
-        <h1 class="logo">Work InIt</h1>
-        <ul class="nav-ul" id="nav-ul">
-          <li class="link">Start</li>
-          <li class="link">Offers</li>
-          <li class="link">Matchmaking</li>
-          <li class="link">Contact</li>
-        </ul>
+      <nav class="navbar">
+        <div class="brand-title">justjoin.it</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a class="header1" href="#">Offers</a></li>
+            <li><a class="header2" href="#">Brand Stories</a></li>
+            <li><a class="header3" href="#">Geek</a></li>
+            <li><a class="header4" href="#">Matchmaking</a></li>
+            <li><button class="navbar-button" href="#">Post a Job</button></li>
+            <li><button class="navbar-button sign-in" href="#">Sign-in</button></li>
+            <select class="dropdown"name="currancy" id="currancy">
+              <option value="GBP">GBP</option>
+              <option value="PLN">PLN</option>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+            </select>
+            <a href="#" class="toggle-button right">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </a>
+          </ul>
+        </div>
       </nav>
-    </header>
-  </body>
+    </body>
+   
+
 </html>

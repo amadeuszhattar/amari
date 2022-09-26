@@ -37,6 +37,14 @@ document.getElementById("map-close").onclick = function () {
   document.getElementById("map-close").style.display = "none";
 };
 
-console.log(mapButton);
-console.log(leafletMap);
-console.log(offerBox);
+
+// MOBILE NAVBAR 
+/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
