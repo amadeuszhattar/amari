@@ -28,12 +28,25 @@
       <div id="content-container">
         <div class="offer-container-menu">
           <div class="menu-left">
-          <p class="with-salary">With Salary</i></p>
-          <p class="all-offers">All offers</p>
+          <div id="with-salary" class="with-salary">With Salary</div>
+          <div id="all-offers" class="all-offers">All offers</div>
           </div>
           <div class="menu-right">
-            <p class="remote-filter">Remote</p>
-            <p class="date-filter">Latest</p>
+              <select class="date-filter">  
+              <option value = "latest"> Latest   
+              </option>  
+              <option value = "highestsalary"> Highest Salary   
+              </option>  
+              <option value = "lowestsalary"> Lowest Salary  
+              </option>  
+              </select> 
+              <div class="remote-box">
+            <p class="remote-filter">Remote </p>  
+            <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+            </label>
+            </div>
           </div>
         </div>
         <div id="offer-container">
@@ -52,8 +65,12 @@
             </div>
             <div class="offer-box-bottom">
               <div class="offer-location-box">
-                <p class="offer-company">Amari benefits it</p>
-                <p class="offer-location">Ireland, Dublin</p>
+              <p class="offer-company"><span class="material-symbols-outlined">
+domain
+</span>&nbsp;Amari benefits it</p>
+                <p class="offer-location"><span class="material-symbols-outlined">
+location_on
+</span>&nbsp;Ireland, Dublin</p>
                 <p class="offer-remote">Remote Job</p>
               </div>
               <div class="offer-tech-box">
@@ -80,8 +97,12 @@
             </div>
             <div class="offer-box-bottom">
               <div class="offer-location-box">
-                <p class="offer-company">Amari benefits it</p>
-                <p class="offer-location">Ireland, Dublin</p>
+                <p class="offer-company"><span class="material-symbols-outlined">
+domain
+</span>&nbsp;Amari benefits it</p>
+                <p class="offer-location"><span class="material-symbols-outlined">
+location_on
+</span>&nbsp;Ireland, Dublin</p>
                 <p class="offer-remote">Remote Job</p>
               </div>
               <div class="offer-tech-box">
@@ -104,6 +125,7 @@
 
 
     <script src="index.js"></script>
+    <script src="map.js"></script>
   </body>
 
 </html>

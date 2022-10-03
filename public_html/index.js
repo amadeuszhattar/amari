@@ -6,9 +6,10 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "© OpenStreetMap",
 }).addTo(map);
 
-L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    className: 'map-tiles'
+L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  className: "map-tiles",
 }).addTo(map);
 // map showing button
 
@@ -16,14 +17,6 @@ const mapButton = document.getElementById("map-button");
 const leafletMap = document.getElementsByClassName("offer-map");
 const offerBox = document.getElementById("content-container");
 
-// mapButton.addEventListener(
-//   "click",
-//   function () {
-//     document.getElementById("content-container").style.display = "none";
-//     document.getElementById("offer-map").style.display = "block";
-//   },
-//   false
-// );
 
 document.getElementById("map-button").onclick = function () {
   document.getElementById("content-container").style.display = "none";
@@ -38,7 +31,7 @@ document.getElementById("map-close").onclick = function () {
 };
 
 
-// MOBILE NAVBAR 
+// MOBILE NAVBAR
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function myFunction() {
   var x = document.getElementById("myLinks");
