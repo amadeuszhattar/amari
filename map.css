@@ -1,0 +1,32 @@
+.popup__salary--amount {
+  color: green;
+}
+.popup__image{
+    width: 35px;
+}
+.leaflet-popup-content {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 1em;
+  gap: 1em;
+  min-width: max-content;
+}
+
+.leaflet-popup-content:hover{
+  border-radius: 5%;
+  background-color: rgba(219, 204, 204, 0.5);
+}
+
+.leaflet-popup-content p {
+  margin: 0.2em;
+  width: 10em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.leaflet-tooltip{
+  background-color: rgb(243, 61, 61);
+  border-radius: 50%;
+}
