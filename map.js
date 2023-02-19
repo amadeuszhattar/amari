@@ -116,10 +116,10 @@ const markerOnOut = function (marker) {
 // handling map buttons
 
 mapOpenBtn.addEventListener("click", function (e) {
-  darkTheme.addTo(map);
   mapContainer.style.display = "block";
   mapOpenContainer.style.display = "none";
   mapCloseContainer.style.display = "block";
+  map.invalidateSize(true)
 });
 
 mapCloseBtn.addEventListener("click", function (e) {
