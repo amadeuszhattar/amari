@@ -1,62 +1,79 @@
 "use strict";
-const API_URL = './map.json';
+const API_URL = "./map.json";
 const mapContainer = document.querySelector("#map");
-const mapOpenBtn = document.querySelector('.map__open--button');
-const mapCloseBtn = document.querySelector('.map__close--button');
-const mapCloseContainer = document.querySelector('.map__close--container')
-const mapOpenContainer = document.querySelector('.map__open--container')
-
+const mapOpenBtn = document.querySelector(".map__open--button");
+const mapCloseBtn = document.querySelector(".map__close--button");
+const mapCloseContainer = document.querySelector(".map__close--container");
+const mapOpenContainer = document.querySelector(".map__open--container");
+const map = L.map("map").setView([51.505, -0.09], 8);
 
 // default map container
-const map = L.map("map").setView([51.505, -0.09], 8);
- const darkTheme = L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-  subdomains: "abcd",
-  maxZoom: 20,
-});
-darkTheme.addTo(map)
+const renderMap = function () {
+  const darkTheme = L.tileLayer(
+    "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+    {
+      subdomains: "abcd",
+      maxZoom: 20,
+    }
+  ).addTo(map);
+};
+renderMap();
 
 // fetch data
 const getJson = async function (url) {
   try {
-    const data = await fetch("./map.json");
+    const data = await fetch(url);
     return data.json();
   } catch (error) {
     console.error(error);
   }
 };
 
-
-// rendering icons 
+// rendering icons
 const renderIcon = async function () {
   try {
     const iconsData = await getJson(API_URL);
-    iconsData.icons.map((el) => {
-      const data = el;
-      const { lat, lng } = el;
+    iconsData.icons.map((data) => {
+      createIcon(data);
 
-      const marker = createMarker(lat, lng, data);
-
+      const marker = createMarker(data);
       markerOnHover(marker, createPopup(data));
-      markerOnOut(marker)
+      markerOnOut(marker);
     });
-    
   } catch (error) {
     console.error(error);
   }
 };
+
 renderIcon();
+const createIcon = function (iconData) {
+  return L.icon({
+    iconSize: [30, 30],
+    iconUrl: iconData.img,
+  });
+};
 
-
-// create a marker 
-const createMarker = function (lat, lng, data){
+// create a marker
+const createMarker = function (iconData) {
+  const { lat, lng } = iconData;
   return L.marker([lat, lng], {
-    icon: createTechIcon(data),
-  }).addTo(map);
-}
+    icon: createIcon(iconData),
+  })
+    .setBouncingOptions({
+      bounceHeight: 10, // height of the bouncing
+      bounceSpeed: 100, // bouncing speed coefficient
+      exclusive: true,
+      elastic: false, // if this marker is bouncing all others must stop
+    })
+    .addTo(map)
+    .on("click", function () {
+      this.toggleBouncing();
+    });
+};
 
 // create a popup
 
-const createPopup = function (data){
+const createPopup = function (data) {
   return L.popup({
     offset: [0, -10],
     className: "popup__test",
@@ -65,7 +82,7 @@ const createPopup = function (data){
     content: createMarkup(data),
     maxWidth: 200,
   });
-}
+};
 
 // create popup markup
 const createMarkup = function (popupData) {
@@ -83,40 +100,30 @@ const createMarkup = function (popupData) {
   `;
 };
 
-
-const createTechIcon = function (data){
- return  L.icon({
-    iconSize: 30,
-    iconUrl: data.img,
-  });
-}
-
-
-
-const markerOnHover = function(marker, popup){
+const markerOnHover = function (marker, popup) {
   marker.on("mouseover", function (e) {
-      e.target.bindPopup(popup);
-      e.target.openPopup();
+    this.bindPopup(popup);
+    this.openPopup();
   });
-}
+};
 
-const markerOnOut = function(marker){
+const markerOnOut = function (marker) {
   marker.on("mouseout", function (e) {
-    e.target.closePopup()
-});
-}
+    this.closePopup();
+  });
+};
 
 // handling map buttons
 
-mapOpenBtn.addEventListener('click', function(e){
-  darkTheme.addTo(map)
-  mapContainer.style.display = 'block';
-  mapOpenContainer.style.display = 'none';
-  mapCloseContainer.style.display = 'block'
-})
+mapOpenBtn.addEventListener("click", function (e) {
+  darkTheme.addTo(map);
+  mapContainer.style.display = "block";
+  mapOpenContainer.style.display = "none";
+  mapCloseContainer.style.display = "block";
+});
 
-mapCloseBtn.addEventListener('click', function(e){
-  mapContainer.style.display = 'none';
-  mapOpenContainer.style.display = 'block';
-  mapCloseContainer.style.display = 'none'
-})
+mapCloseBtn.addEventListener("click", function (e) {
+  mapContainer.style.display = "none";
+  mapOpenContainer.style.display = "block";
+  mapCloseContainer.style.display = "none";
+});
