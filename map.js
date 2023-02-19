@@ -63,7 +63,7 @@ const createMarker = function (iconData) {
       bounceHeight: 10, // height of the bouncing
       bounceSpeed: 100, // bouncing speed coefficient
       exclusive: true,  // if this marker is bouncing all others must stop
-      elastic: false, gi
+      elastic: false,
     })
     .addTo(map)
     .on("click", function () {
