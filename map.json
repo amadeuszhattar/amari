@@ -2,7 +2,8 @@
  "icons": [
     {
         "img": "./tech-icons/js.svg",
-        "coords": [51.505, -0.200],
+        "lat": 51.505,
+        "lng": -0.200,
         "title": "Developer",
         "companyImg": "./tech-icons/google.svg",
         "company": "Google",
@@ -12,7 +13,8 @@
     },
     {
         "img": "./tech-icons/js.svg",
-        "coords": [51.505, -0.300],
+        "lat": 51.505,
+        "lng": -0.300,
         "title": "Project Manager",
         "companyImg": "./tech-icons/google.svg",
         "company": "Google",
@@ -22,8 +24,9 @@
     },
     {
         "img": "./tech-icons/js.svg",
-        "coords": [51.505, -0.100],
-        "title": "Support",
+        "lat": 51.505,
+        "lng": -0.100,
+        "title": "Supportttttttttttttttttttttttttttttttttttt",
         "companyImg": "./tech-icons/google.svg",
         "company": "Google",
         "salary": "10000 - 14000 PLN",

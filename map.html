@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Map</title>
+    <script
+    defer
+    src="https://kit.fontawesome.com/b160ac93e6.js"
+    crossorigin="anonymous"
+  ></script>
     <!-- Start leaflet -->
     <link
       rel="stylesheet"
@@ -19,12 +24,18 @@
     ></script>
     <!-- End leaflet -->
     <script defer src="./map.js"></script>
-    <link rel="stylesheet" href="./map.css">
-
+    <link rel="stylesheet" href="./map.css" />
   </head>
   <body>
-    <div style="height: 100vh" id="map"></div>
-
-
+    <div id="map">
+      <div class="map__close--container">
+        <img class="map__close--button" src="./tech-icons/cancel.svg" alt="" />
+      </div>
+    </div>
+    <div class="map__open--container">
+      <button class="map__open--button">
+        <img src="./tech-icons/map.svg" alt="">Map
+      </button>
+    </div>
   </body>
 </html>

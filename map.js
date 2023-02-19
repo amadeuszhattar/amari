@@ -1,66 +1,122 @@
 "use strict";
+const API_URL = './map.json';
+const mapContainer = document.querySelector("#map");
+const mapOpenBtn = document.querySelector('.map__open--button');
+const mapCloseBtn = document.querySelector('.map__close--button');
+const mapCloseContainer = document.querySelector('.map__close--container')
+const mapOpenContainer = document.querySelector('.map__open--container')
+
 
 // default map container
-const mapContainer = document.querySelector("#map");
-const map = L.map("map").setView([51.505, -0.09], 13);
-
-L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+const map = L.map("map").setView([51.505, -0.09], 8);
+ const darkTheme = L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
   subdomains: "abcd",
   maxZoom: 20,
-}).addTo(map);
+});
+darkTheme.addTo(map)
+
+// fetch data
+const getJson = async function (url) {
+  try {
+    const data = await fetch("./map.json");
+    return data.json();
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+
+// rendering icons 
+const renderIcon = async function () {
+  try {
+    const iconsData = await getJson(API_URL);
+    iconsData.icons.map((el) => {
+      const data = el;
+      const { lat, lng } = el;
+
+      const marker = createMarker(lat, lng, data);
+
+      markerOnHover(marker, createPopup(data));
+      markerOnOut(marker)
+    });
+    
+  } catch (error) {
+    console.error(error);
+  }
+};
+renderIcon();
+
+
+// create a marker 
+const createMarker = function (lat, lng, data){
+  return L.marker([lat, lng], {
+    icon: createTechIcon(data),
+  }).addTo(map);
+}
+
+// create a popup
+
+const createPopup = function (data){
+  return L.popup({
+    offset: [0, -10],
+    className: "popup__test",
+    closeOnClick: "*",
+    closeButton: false,
+    content: createMarkup(data),
+    maxWidth: 200,
+  });
+}
 
 // create popup markup
-const createMarkup = function (popup) {
+const createMarkup = function (popupData) {
   return `
-  <div class="popup__image--container">
-      <img class="popup__image" src="${popup.companyImg}" alt="">
-    </div>
-    <div class="popup__job--details">
-      <p>${popup.title}</p>
-      <p class="popup__salary--amount">${popup.salary}</p>
-      <p>${popup.company}</p>
-    </div>
+    <div class="popup__container">
+      <div class="popup__image--container">
+        <img class="popup__image" src="${popupData.companyImg}" alt="">
+      </div>
+      <div class="popup__job--details">
+        <p>${popupData.title}</p>
+        <p class="popup__salary--amount">${popupData.salary}</p>
+        <p>${popupData.company}</p>
+      </div>
+    </div>  
   `;
 };
 
-const renderIcon = function (response) {
-  response.icons.map((el) => {
-    const data = el;
-    // set icons settings
-    const techIcon = L.icon({
-      iconSize: 30,
-      iconUrl: data.img,
-    });
 
-    // create icons
-    const popup = L.popup({
-      offset: [0, -10],
-      className: "popuptest",
-      closeOnClick: "*",
-      closeButton: false,
-      content: createMarkup(data),
-    });
+const createTechIcon = function (data){
+ return  L.icon({
+    iconSize: 30,
+    iconUrl: data.img,
+  });
+}
 
-    const markerIcon = L.marker(data.coords, {
-      icon: techIcon,
-    }).addTo(map);
-    markerIcon.on("mouseover", function (e) {
+
+
+const markerOnHover = function(marker, popup){
+  marker.on("mouseover", function (e) {
       e.target.bindPopup(popup);
       e.target.openPopup();
-    });
-    markerIcon.on("mouseout", function (e) {
-      e.target.closePopup();
-    });
   });
-};
+}
 
-// fetch icons data
-const getData = async function () {
-  const data = await fetch("./map.json");
-  const response = await data.json();
-  // render icon
-  renderIcon(response);
-};
-getData();
+const markerOnOut = function(marker){
+  marker.on("mouseout", function (e) {
+    e.target.closePopup()
+});
+}
+
+// handling map buttons
+
+mapOpenBtn.addEventListener('click', function(e){
+  darkTheme.addTo(map)
+  mapContainer.style.display = 'block';
+  mapOpenContainer.style.display = 'none';
+  mapCloseContainer.style.display = 'block'
+})
+
+mapCloseBtn.addEventListener('click', function(e){
+  mapContainer.style.display = 'none';
+  mapOpenContainer.style.display = 'block';
+  mapCloseContainer.style.display = 'none'
+})
