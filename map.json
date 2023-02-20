@@ -3,7 +3,7 @@
     {
         "img": "./tech-icons/js.svg",
         "lat": 51.505,
-        "lng": -0.200,
+        "lng": 21.200,
         "title": "Developer",
         "companyImg": "./tech-icons/google.svg",
         "company": "Google",

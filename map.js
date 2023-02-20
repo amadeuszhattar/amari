@@ -1,23 +1,31 @@
 "use strict";
 const API_URL = "./map.json";
+const DESKTOP_ZOOM_LEVEL = 10
+const MOBILE_ZOOM_LEVEL = 14
 const mapContainer = document.querySelector("#map");
 const mapOpenBtn = document.querySelector(".map__open--button");
 const mapCloseBtn = document.querySelector(".map__close--button");
 const mapCloseContainer = document.querySelector(".map__close--container");
 const mapOpenContainer = document.querySelector(".map__open--container");
-const map = L.map("map").setView([51.505, -0.09], 8);
+const map = L.map("map");
 
 // default map container
-const renderMap = function () {
-  const darkTheme = L.tileLayer(
+const renderMap = function (lat, lng, zoom) {
+  map.setView([lat, lng], zoom, {
+    animate: true,
+    pan: {
+      duration: 1,
+    }
+  });
+  L.tileLayer(
     "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
     {
       subdomains: "abcd",
       maxZoom: 20,
     }
-  ).addTo(map);
+  ).addTo(map)
 };
-renderMap();
+renderMap(51.505, -0.200, DESKTOP_ZOOM_LEVEL);
 
 // fetch data
 const getJson = async function (url) {
@@ -60,14 +68,16 @@ const createMarker = function (iconData) {
     icon: createIcon(iconData),
   })
     .setBouncingOptions({
-      bounceHeight: 10, // height of the bouncing
+      bounceHeight: 20, // height of the bouncing
       bounceSpeed: 100, // bouncing speed coefficient
       exclusive: true,  // if this marker is bouncing all others must stop
       elastic: false,
     })
     .addTo(map)
-    .on("click", function () {
+    .on("click", function (e) {
+      if(this.map) return
       this.toggleBouncing();
+      renderMap(lat, lng, DESKTOP_ZOOM_LEVEL)
     });
 };
 
@@ -127,3 +137,4 @@ mapCloseBtn.addEventListener("click", function (e) {
   mapOpenContainer.style.display = "block";
   mapCloseContainer.style.display = "none";
 });
+
