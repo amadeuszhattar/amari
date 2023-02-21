@@ -16,9 +16,13 @@ body{
     align-items: center;
 }
 
-.offers__navigation--right,.offers__navigation--left{
+.offers__navigation--right{
     display: flex;
     gap: 1em;
+}
+
+.offers__navigation--left{
+    display: flex;
 }
 
 /* navigation left styles */
@@ -27,8 +31,14 @@ body{
 }
 
 .offers__navigation--left p {
-    padding: 1em 1.5em;
-    border-radius: 1em 1em 0em 0em;
+    padding: 0.5em 1.5em;
+    cursor: pointer;
+}
+
+/*  buttons active class */
+.offers__left--button--active{
+    background-color: rgb(42, 42, 42);
+
 }
 
 
