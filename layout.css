@@ -1,0 +1,54 @@
+body{
+    color: white;
+    background-color: rgb(48, 48, 48);
+}
+
+/* main container  */
+.offers__main--container{
+    padding: 0em 1em;
+    background-color: rgb(48, 48, 48);
+}
+
+/* nav container  */
+.offers__navigation--container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.offers__navigation--right,.offers__navigation--left{
+    display: flex;
+    gap: 1em;
+}
+
+/* navigation left styles */
+.offers__navigation--left p:hover{
+    background-color: rgb(65, 65, 65);
+}
+
+.offers__navigation--left p {
+    padding: 1em 1.5em;
+    border-radius: 1em 1em 0em 0em;
+}
+
+
+/* nav icons sizing */
+img{
+    width: 15px;
+}
+p{
+
+    font-size: 15px;
+    display: flex;
+}
+span{
+    color: red;
+}
+
+
+
+
+
+
+
+
