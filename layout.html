@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./layout.css">
+    <link rel="stylesheet" href="./layout.css" />
     <script defer src="./layout.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="offers__main--container">
-        <div class="offers__navigation--container">
-            <div class="offers__navigation--left">
-                <p class="offers__left--button offers__left--button--active">With salary</p>
-                <p class="offers__left--button">All offers&nbsp<span>14 682</span></p>
-            </div>
-            <div class="offers__navigation--right">
-                <p><img src="./tech-icons/bell.svg" alt="">Subscribe</p>
-                <p>Remote</p>
-                <p>Latest&nbsp<img src="./tech-icons/bell.svg" alt=""></p>
-            </div>
+      <div class="offers__navigation--container">
+        <div class="offers__navigation--left">
+          <p class="offers__left--button offers__left--button--active">
+            With salary
+          </p>
+          <p class="offers__left--button left__button--hover">
+            All offers&nbsp<span>14 682</span>
+          </p>
         </div>
+        <div class="offers__navigation--right">
+          <p>Subscription</p>
+          <div class="offers__navigation--sort-container">
+            <p class="offers__navigation--sort">
+              Latest&nbsp<img
+                class="offers__sort--arrow"
+                src="./tech-icons/arrow-down.svg"
+                alt=""
+              />
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="offers__sort--menu">
+          <li class="offers__sort--menu--link">Latest</li>
+          <li class="offers__sort--menu--link">Highest salary</li>
+          <li class="offers__sort--menu--link">Lowest salary</li>
+      </div>
     </div>
-</body>
+  </body>
 </html>
