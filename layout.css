@@ -33,7 +33,7 @@ body {
 }
 
 .offers__navigation--left p {
-  padding: 0.5em 1.5em;
+  padding: 0em 0.5em;
   cursor: pointer;
 }
 
@@ -56,6 +56,19 @@ span {
 
 /*  sort menu styling */
 
+.offers__navigation--right > div {
+  cursor: pointer;
+  gap: 0.1em;
+  display: flex;
+}
+
+.offers__navigation--sub--container {
+  padding: 0em 0.5em;
+}
+.offers__navigation--sub--container:hover {
+  background-color: rgb(65, 65, 65);
+}
+
 .offers__sort--menu {
   position: absolute;
   right: 1%;
@@ -65,12 +78,6 @@ span {
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s ease;
-}
-
-.offers__navigation--sort-container{
-    cursor: pointer;
-    gap: 0.5em;
-    display: flex;
 }
 
 .offers__sort--menu--link {
@@ -100,10 +107,8 @@ span {
   transform: rotate(180deg);
 }
 
-
-
-@media only screen and (max-width: 75em){
-    .offers__navigation--sort-container{
-        display: none;
-    }
+@media only screen and (max-width: 75em) {
+  .offers__navigation--sort-container {
+    display: none;
+  }
 }

@@ -3,12 +3,12 @@ const sortContainer = document.querySelector(".offers__navigation--sort-containe
 const sortArrow = document.querySelector(".offers__sort--arrow");
 const sortPopup = document.querySelector(".offers__sort--menu");
 const sortMenu = document.querySelector(".offers__sort--menu");
-const offersLeftBtn = document.querySelectorAll(".offers__left--button");
+const offersLeftBtn = document.querySelectorAll(".offers__left--button--container");
 
 
 // left nav handlers
 navLeft.addEventListener("click", function (e) {
-  const cur = e.target.closest(".offers__left--button");
+  const cur = e.target.closest(".offers__left--button--container");
   if (!cur) return;
   if (!cur.classList.contains("offers__left--button--active")) {
     offersLeftBtn.forEach((btn) =>
