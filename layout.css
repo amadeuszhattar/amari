@@ -99,7 +99,6 @@ span {
 }
 
 .offers__sort--arrow {
-  color: white;
   transition: all 0.2s ease;
 }
 
@@ -107,8 +106,8 @@ span {
   transform: rotate(180deg);
 }
 
-@media only screen and (max-width: 75em) {
+@media only screen and (max-width: 50em) {
   .offers__navigation--sort-container {
-    display: none;
+    display: none !important
   }
 }
