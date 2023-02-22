@@ -63,7 +63,14 @@ span {
   max-width: fit-content;
   transform: translateY(-1em);
   opacity: 0;
+  visibility: hidden;
   transition: all 0.5s ease;
+}
+
+.offers__navigation--sort-container{
+    cursor: pointer;
+    gap: 0.5em;
+    display: flex;
 }
 
 .offers__sort--menu--link {
@@ -71,13 +78,13 @@ span {
   padding: 1em;
 }
 .offers__sort--menu--link:hover {
-  cursor: pointer;
   background-color: gray;
 }
 
 .offers__sort--menu--active {
   transform: translateY(0em);
   opacity: 1;
+  visibility: visible;
 }
 
 .offers__navigation--sort {
@@ -91,4 +98,12 @@ span {
 
 .offers__sort--arrow--active {
   transform: rotate(180deg);
+}
+
+
+
+@media only screen and (max-width: 75em){
+    .offers__navigation--sort-container{
+        display: none;
+    }
 }
