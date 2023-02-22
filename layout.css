@@ -37,8 +37,8 @@ body{
 
 /*  buttons active class */
 .offers__left--button--active{
+    pointer-events: none;
     background-color: rgb(42, 42, 42);
-
 }
 
 
