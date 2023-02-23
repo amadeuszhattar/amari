@@ -191,4 +191,7 @@ input:checked + .slider:before {
   .offers__navigation--sort-container {
     display: none !important
   }
+  .offers__navigation--container p{
+    font-size: 0.8em;
+  }
 }

@@ -53,6 +53,7 @@ sortMenu.addEventListener("click", function (e) {
 const subscriptionInput = document.querySelector('.offers__remote--input');
 subscriptionInput.checked = false
 
+
 navRight.addEventListener('click', function(e){
   const input = e.target.closest('.offers__remote--input--container')
   const subscription = document.querySelector('.offers__navigation--sub--container')
