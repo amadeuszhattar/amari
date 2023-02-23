@@ -7,9 +7,6 @@ const sortMenu = document.querySelector(".offers__sort--menu");
 const offersLeftBtn = document.querySelectorAll(".offers__left--button--container");
 
 
-
-
-
 // left nav handlers
 navLeft.addEventListener("click", function (e) {
   const cur = e.target.closest(".offers__left--button--container");
@@ -53,9 +50,10 @@ sortMenu.addEventListener("click", function (e) {
   sortPopupRemove();
 });
 
+const subscriptionInput = document.querySelector('.offers__remote--input');
+subscriptionInput.checked = false
 
 navRight.addEventListener('click', function(e){
-  const subscriptionInput = document.querySelector('.offers__remote--input');
   const input = e.target.closest('.offers__remote--input--container')
   const subscription = document.querySelector('.offers__navigation--sub--container')
   if(!input) return // guard clouse
