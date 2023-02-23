@@ -1,9 +1,13 @@
 const navLeft = document.querySelector(".offers__navigation--left");
+const navRight = document.querySelector(".offers__navigation--right");
 const sortContainer = document.querySelector(".offers__navigation--sort-container");
 const sortArrow = document.querySelector(".offers__sort--arrow");
 const sortPopup = document.querySelector(".offers__sort--menu");
 const sortMenu = document.querySelector(".offers__sort--menu");
 const offersLeftBtn = document.querySelectorAll(".offers__left--button--container");
+
+
+
 
 
 // left nav handlers
@@ -49,6 +53,23 @@ sortMenu.addEventListener("click", function (e) {
   sortPopupRemove();
 });
 
+
+navRight.addEventListener('click', function(e){
+  const subscriptionInput = document.querySelector('.offers__remote--input');
+  const input = e.target.closest('.offers__remote--input--container')
+  const subscription = document.querySelector('.offers__navigation--sub--container')
+  if(!input) return // guard clouse
+  if(input && subscriptionInput.checked == false){
+    subscriptionInput.checked = true
+    subscription.classList.add('offers__navigation--sub--container--active')
+  } else {
+    subscriptionInput.checked = false
+    subscription.classList.remove('offers__navigation--sub--container--active')
+  }
+  
+ });
+
+
 // helper functions
 const sortPopupRemove = function () {
   sortPopup.classList.remove("offers__sort--menu--active");
@@ -59,3 +80,5 @@ const sortPopupAdd = function () {
   sortArrow.classList.add("offers__sort--arrow--active");
   sortPopup.classList.add("offers__sort--menu--active");
 };
+
+

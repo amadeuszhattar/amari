@@ -63,7 +63,14 @@ span {
 }
 
 .offers__navigation--sub--container {
+  opacity: 0;
+  visibility:hidden;
   padding: 0em 0.5em;
+  transition: all 0.5s ease;
+}
+.offers__navigation--sub--container--active{
+  visibility: visible;
+  opacity: 1;
 }
 .offers__navigation--sub--container:hover {
   background-color: rgb(65, 65, 65);
@@ -104,6 +111,80 @@ span {
 
 .offers__sort--arrow--active {
   transform: rotate(180deg);
+}
+
+/* switch input styles */
+
+.offers__remote--input--container{
+display: flex;
+align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 16px;
+}
+
+/* .switch::before{
+  margin-left: auto;
+  cursor: pointer;
+  content: 'Remote';
+  font-size: 1em;
+  position: absolute;
+  right: 2em;
+  top: 0.1em;
+  padding-right: 15px;
+} */
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #383838;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 2px;
+  bottom: 2px;
+  background-color: rgb(131, 131, 131);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #f36c6c;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 @media only screen and (max-width: 50em) {
