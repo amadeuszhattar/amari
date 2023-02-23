@@ -1,3 +1,4 @@
+
 const navLeft = document.querySelector(".offers__navigation--left");
 const navRight = document.querySelector(".offers__navigation--right");
 const sortContainer = document.querySelector(".offers__navigation--sort-container");
