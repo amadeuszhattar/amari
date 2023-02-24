@@ -7,7 +7,6 @@ body {
 .offers__main--container {
   position: relative;
   height: 100vh;
-  padding: 0em 1em;
   background-color: rgb(44, 44, 44);
 }
 
@@ -187,6 +186,9 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+/* offers container */
+
+
 @media only screen and (max-width: 50em) {
   .offers__navigation--sort-container {
     display: none !important
@@ -195,3 +197,5 @@ input:checked + .slider:before {
     font-size: 0.8em;
   }
 }
+
+
