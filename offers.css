@@ -1,0 +1,83 @@
+body {
+  background-color: rgb(43, 43, 43);
+}
+.offers__box {
+  color: white;
+  border-radius: 1em;
+  background-color: rgb(61, 61, 61);
+  padding: 0.5em 1em;
+  height: 3.5em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.offers__box * {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.offers__box--image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 1em;
+  width: fit-content;
+  padding: 0.8em;
+}
+
+.offers__image {
+  max-height: 2.3em;
+  max-width: 7em;
+}
+.offers__info--container {
+  flex-basis: 100%;
+}
+
+.offers__info--title {
+  display: flex;
+  align-items: center;
+}
+
+.offers__info--top,
+.offers__info--bottom {
+  display: flex;
+  max-height: 2em;
+}
+
+.offers__info--top {
+  justify-content: space-between;
+}
+
+.offers__info--salary,
+.offers__info--location,
+.offers__info--stack {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.offers__amount {
+  color: greenyellow;
+}
+.offers__new {
+  font-size: 0.7em;
+  background-color: gray;
+  padding: 0.3em 0.7em;
+  border-radius: 3em;
+}
+
+.offers__info--stack {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.offers__tech--item {
+  font-size: 0.7em;
+  background-color: rgb(34, 34, 34);
+  padding: 0.3em 0.7em;
+  border-radius: 3em;
+  min-width: 0em;
+}
