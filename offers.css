@@ -60,13 +60,21 @@ body {
 }
 
 .offers__amount {
-  color: greenyellow;
+  color: rgb(101, 168, 0);
 }
 .offers__new {
   font-size: 0.7em;
   background-color: gray;
   padding: 0.3em 0.7em;
   border-radius: 3em;
+}
+
+.offers__remote--button{
+  font-size: 0.7em;
+  color: rgb(245, 118, 118);
+  background-color: rgb(83, 83, 83);
+  border-radius: 1em;
+  padding: 0.3em 0.7em;
 }
 
 .offers__info--stack {
