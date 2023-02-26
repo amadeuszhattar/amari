@@ -4,7 +4,6 @@ const navRight = document.querySelector(".offers__navigation--right");
 const sortContainer = document.querySelector(".offers__navigation--sort-container");
 const sortArrow = document.querySelector(".offers__sort--arrow");
 const sortPopup = document.querySelector(".offers__sort--menu");
-const sortMenu = document.querySelector(".offers__sort--menu");
 const offersLeftBtn = document.querySelectorAll(".offers__left--button--container");
 
 
@@ -25,8 +24,9 @@ navLeft.addEventListener("click", function (e) {
 
 
 // right nav hadlers
-sortContainer.addEventListener("click", function (e) {
-  if (!sortArrow.classList.contains("offers__sort--arrow--active")) {
+document.addEventListener("click", function (e) {
+  const sortBtn = e.target.closest('.offers__navigation--sort-container')
+  if (!sortArrow.classList.contains("offers__sort--arrow--active") && sortBtn) {
     sortPopupAdd();
   } else
     sortPopupRemove();
@@ -43,8 +43,7 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-
-sortMenu.addEventListener("click", function (e) {
+sortPopup.addEventListener("click", function (e) {
   const text = e.target.textContent;
   const sortBtn = document.querySelector(".offers__navigation--sort");
   sortBtn.textContent = text;
@@ -53,8 +52,6 @@ sortMenu.addEventListener("click", function (e) {
 
 const subscriptionInput = document.querySelector('.offers__remote--input');
 subscriptionInput.checked = false
-
-
 navRight.addEventListener('click', function(e){
   const input = e.target.closest('.offers__remote--input--container')
   const subscription = document.querySelector('.offers__navigation--sub--container')

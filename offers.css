@@ -4,6 +4,7 @@ body {
 
 
 .offers__box {
+  cursor: pointer;
   color: white;
   border-radius: 1em;
   background-color: rgb(61, 61, 61);

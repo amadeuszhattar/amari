@@ -16,6 +16,7 @@ body {
 
 /* nav container  */
 .offers__navigation--container {
+  padding: 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
