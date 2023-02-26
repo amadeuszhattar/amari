@@ -1,6 +1,8 @@
 body {
   background-color: rgb(43, 43, 43);
 }
+
+
 .offers__box {
   color: white;
   border-radius: 1em;
@@ -53,13 +55,17 @@ body {
 
 .offers__info--salary,
 .offers__info--location,
-.offers__info--stack {
+.offers__info--stack,.offers__info--salary--mobile {
   display: flex;
   align-items: center;
   gap: 0.5em;
 }
 
-.offers__amount {
+.offers__info--salary--mobile{
+  display: none;
+}
+
+.offers__amount,.offers__amount--mobile  {
   color: rgb(101, 168, 0);
 }
 .offers__new {
@@ -68,6 +74,26 @@ body {
   padding: 0.3em 0.7em;
   border-radius: 3em;
 }
+
+.offers__info--company , .offers__info--city, .offers__info--city--mobile{
+  font-size: .8em;
+  gap: .3em;
+  display: flex;
+  align-items: center;
+}
+
+.offers__info--city--mobile{
+  display: none;
+}
+
+.offers__info--expand{
+  transition: all .5s ease;
+}
+
+.offer__info--expand--active{
+  transform: rotate(180deg);
+}
+
 
 .offers__remote--button{
   font-size: 0.7em;
@@ -83,9 +109,32 @@ body {
 }
 
 .offers__tech--item {
+  text-transform: lowercase;
   font-size: 0.7em;
   background-color: rgb(34, 34, 34);
   padding: 0.3em 0.7em;
   border-radius: 3em;
   min-width: 0em;
+}
+
+
+@media screen and (max-width: 65em) {
+  .offers__info--bottom{
+    gap: .5em;
+  }
+  .offers__remote--button{
+    display: none;
+  }
+  .offers__info--salary--mobile{
+    font-size: 12px;
+    display: flex;
+  }
+  .offers__amount, .offers__info--stack, .offers__info--location{
+    display: none;
+  }
+  .offers__info--city--mobile{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+  }
 }
