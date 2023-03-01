@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./sub.css" />
+  </head>
+  <body>
+    <div class="subscription__container">
+      <div class="close__button">
+        <p>X</p>
+      </div>
+      <div class="subscription__title">
+        <h1>Subscribe to the job alert</h1>
+      </div>
+      <div class="subscription__scope">
+        <p>Remote</p>
+        <p>Offers with salary</p>
+      </div>
+      <form action="">
+        <div class="form__sub--email">
+          <label for="email">Email address:</label>
+          <input type="email" id="email" name="email" />
+        </div>
+        <div class="form__sub--frequency">
+          <label for="frequency">Frequency:</label>
+          <select name="frequency" id="frequency">
+            <option value="volvo">Daily</option>
+            <option value="saab">Weekly</option>
+          </select>
+        </div>
+        <div class="form__sub--privacy">
+          <input type="checkbox" id="privacy" name="privace"/>
+          <label for="privacy">I accept a <a href="#">privacy policy</a></label>
+        </div>
+        <div class="form__sub--button">
+            <input type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

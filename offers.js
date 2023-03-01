@@ -1,9 +1,4 @@
-const cityExpandBtn = document.querySelector('.offers__info--city')
-const cityExpandMenu = document.querySelector('.offers__city--list')
-const offersBox = document.querySelector('.offers__box--container');
-
-
-
+'use strict'
 // location menu expand 
 // offersBox.addEventListener('click', function(e){
 //     // get elements 
