@@ -1,0 +1,131 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subscription__container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em 1em;
+    color: white;
+    height: 100vh;
+    background-color: rgb(66, 66, 66);
+    border-radius: 1em;
+}
+.subscription__container > div, form > div {
+    display: flex;
+}
+
+.close__button--container{
+    cursor: pointer;
+    justify-content: flex-end;
+}
+.sub__close--button{
+    width: 2em;
+}
+
+.subscription__title, .subscription__scope{
+    gap: .5em;
+    justify-content: center;
+}
+
+.subscription__scope p{
+    font-size: .7em;
+    background-color: rgb(39, 39, 39);
+    padding: .5em;
+    border-radius: 1em;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.input__container{
+    flex-direction: column;
+    gap: 1em;
+}
+.input__container > div{
+    display: flex;
+}
+
+.form__sub--email, .form__sub--frequency{
+    flex-direction: column;
+    gap: .3em;
+}
+
+label{
+    font-size: .8em;
+}
+
+.form__sub--email input, .form__sub--frequency select{
+    border-radius: .5em;
+    padding: 1em;
+    border: .2em solid grey;
+    background-color: rgb(66, 66, 66);
+    box-sizing: content-box;
+}
+
+.form__sub--email input::placeholder, .form__sub--frequency select{
+    color: white;
+}
+
+.form__sub--email input:hover, .form__sub--frequency select:hover{
+    background-color: rgb(44, 44, 44);
+}
+.form__sub--frequency option:hover{
+    background-color: rgb(78, 78, 78);
+}
+
+
+.form__sub--email input:focus, .form__sub--frequency select:focus{
+    outline: none;
+    border: .2em solid rgb(70, 0, 102);
+}
+
+.form__sub--privacy input:checked{
+    accent-color: rgb(211, 41, 69);
+}
+.form__sub--privacy a{
+    color: rgb(247, 90, 116);
+}
+
+.form__sub--button{
+    justify-content: center;
+}
+
+.form__sub--button input{
+    cursor: pointer;
+    padding: 1em 5em;
+    border: none;
+    border-radius: 2em;
+    background-color: rgb(211, 41, 69);
+}
+
+@media screen and (min-width: 75em) {
+    .subscription__container{
+        width: 35em;
+        height: 18em;
+    }
+    .input__container{
+        flex-direction: row;
+        gap: 1em;
+    }
+    .form__sub--email, .form__sub--frequency{
+        flex-direction: column;
+        gap: .3em;
+    }
+    .form__sub--email{
+        flex: 7;
+    }
+    .form__sub--frequency{
+        flex: 3;
+    }
+}
