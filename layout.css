@@ -14,6 +14,19 @@ body {
   background-color: rgb(44, 44, 44);
 }
 
+
+.overlay{
+  background-color: transparent;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+
+.hidden{
+  display: none;
+}
 /* nav container  */
 .offers__navigation--container {
   padding: 1em;

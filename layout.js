@@ -5,6 +5,8 @@ const sortContainer = document.querySelector(".offers__navigation--sort-containe
 const sortArrow = document.querySelector(".offers__sort--arrow");
 const sortPopup = document.querySelector(".offers__sort--menu");
 const offersLeftBtn = document.querySelectorAll(".offers__left--button--container");
+const overlay = document.querySelector('.overlay');
+const mainbox = document.querySelector('.offers__main--container')
 
 
 // left nav handlers
@@ -22,15 +24,25 @@ navLeft.addEventListener("click", function (e) {
 });
 
 
+mainbox.addEventListener('click', function(e){
+  const cur = e.target
+  const btn = cur.closest('.offers__navigation--sort-container');
+  console.log(cur);
+  if(btn) {
+    sortPopupAdd();
+  } else {
+    sortPopupRemove();
+  }
+})
 
 // right nav hadlers
-document.addEventListener("click", function (e) {
-  const sortBtn = e.target.closest('.offers__navigation--sort-container')
-  if (!sortArrow.classList.contains("offers__sort--arrow--active") && sortBtn) {
-    sortPopupAdd();
-  } else
-    sortPopupRemove();
-});
+// document.addEventListener("click", function (e) {
+//   const sortBtn = e.target.closest('.offers__navigation--sort-container')
+//   if (!sortArrow.classList.contains("offers__sort--arrow--active") && sortBtn) {
+//     sortPopupAdd();
+//   } else
+//     sortPopupRemove();
+// });
 
 // closing with escape
 
@@ -71,11 +83,13 @@ navRight.addEventListener('click', function(e){
 const sortPopupRemove = function () {
   sortPopup.classList.remove("offers__sort--menu--active");
   sortArrow.classList.remove("offers__sort--arrow--active");
+  overlay.classList.add('hidden')
 };
 
 const sortPopupAdd = function () {
   sortArrow.classList.add("offers__sort--arrow--active");
   sortPopup.classList.add("offers__sort--menu--active");
+  overlay.classList.remove('hidden')
 };
 
 

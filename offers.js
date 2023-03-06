@@ -38,10 +38,6 @@
 //     curElArrow.classList.add('offers__info--expand--active')
 //     curElMenu.classList.add('offers__city--list--active');
 // }
-
-
-
-
 document.addEventListener('click', function(e){
     e.preventDefault()
     const allArrows = document.querySelectorAll('.offers__info--expand--box')
