@@ -2,6 +2,7 @@ body {
   background-color: rgb(43, 43, 43);
 }
 .offers__box--container{
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -105,7 +106,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s ease;
-  z-index: 400;
+  z-index: 999;
 }
 
 .offers__city--list--active{
@@ -160,7 +161,18 @@ body {
   min-width: 0em;
 }
 
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  height: 100vh;
+  width: 100vw;
+}
 
+.hidden{
+  display: none;
+}
 
 
 
