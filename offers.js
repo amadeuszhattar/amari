@@ -1,5 +1,5 @@
 "use strict";
-// location menu expand
+const offersBox = document.querySelector(".offers__box--container");
 // offersBox.addEventListener('click', function(e){
 //     // get elements
 //     const curEl = e.target.closest('.offers__box')
@@ -21,7 +21,7 @@
 //     const clicked = e.target.closest('.offers__city--item')
 //     const curElMenu  = curEl.closest('div').querySelector('.offers__city--list')
 //     const curElArrow = curEl.closest('div').querySelector('.offers__info--expand--box')
-//     if(!clicked) return
+//     if(!curEl) return
 //     if(clicked){
 //         menuRemove(curElMenu, curElArrow)
 //     }
@@ -66,13 +66,15 @@
 //     }
 // })
 
-const offersBox = document.querySelector(".offers__box--container");
-
 offersBox.addEventListener("click", function (e) {
   const allArrows = document.querySelectorAll(".offers__info--expand--box");
   const allCityList = document.querySelectorAll(".offers__city--list");
   const overlay = document.querySelector(".overlay");
   const clicked = e.target;
+  const locItem = clicked.closest(".offers__city--item");
+  if(locItem) {
+    console.log(locItem.dataset.type);
+  }
   const curBox = e.target.closest(".offers__box");
   if (!curBox) {
     allArrows.forEach((el) =>
@@ -94,10 +96,9 @@ offersBox.addEventListener("click", function (e) {
     );
     overlay.classList.add("hidden");
   }
-  if(!cur) return
+  if (!cur) return;
   const dropdown = curBox.closest("div").querySelector(".offers__city--list");
   const arrow = cur.closest("div").querySelector(".offers__info--expand--box");
-  console.log(arrow);
   if (!arrow) return;
   if (!arrow.classList.contains("offers__info--expand--active")) {
     arrow.classList.add("offers__info--expand--active");
