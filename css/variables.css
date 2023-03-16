@@ -1,0 +1,14 @@
+:root {
+    /* MAIN */
+    font-style: Open Sans, sans-serif;
+    --font: rgba(255, 255, 255, 0.8);
+    --active: #ff4081;
+    --hover: #f06292;
+    --background: rgb(44, 44, 44);
+    --darkerFont:#9e9e9e;
+  }
+
+  body{
+    margin: 0;
+    padding: 0;
+  }
