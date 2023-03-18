@@ -1,4 +1,4 @@
-*{
+* {
   padding: 0;
   margin: 0;
 }
@@ -14,8 +14,7 @@ body {
   background-color: rgb(44, 44, 44);
 }
 
-
-.overlay{
+.overlay {
   background-color: transparent;
   position: absolute;
   height: 100vh;
@@ -24,7 +23,7 @@ body {
   left: 0;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 /* nav container  */
@@ -81,11 +80,11 @@ span {
 
 .offers__navigation--sub--container {
   opacity: 0;
-  visibility:hidden;
+  visibility: hidden;
   padding: 0em 0.5em;
   transition: all 0.5s ease;
 }
-.offers__navigation--sub--container--active{
+.offers__navigation--sub--container--active {
   visibility: visible;
   opacity: 1;
 }
@@ -122,6 +121,13 @@ span {
   cursor: pointer;
 }
 
+#offers__sort--scope {
+  background-color: rgb(44, 44, 44);
+  border: none;
+  color: white;
+  box-sizing: border-box;
+}
+
 .offers__sort--arrow {
   transition: all 0.2s ease;
 }
@@ -132,9 +138,9 @@ span {
 
 /* switch input styles */
 
-.offers__remote--input--container{
-display: flex;
-align-items: center;
+.offers__remote--input--container {
+  display: flex;
+  align-items: center;
 }
 
 .switch {
@@ -155,7 +161,7 @@ align-items: center;
   padding-right: 15px;
 } */
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -169,8 +175,8 @@ align-items: center;
   right: 0;
   bottom: 0;
   background-color: #383838;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -181,8 +187,8 @@ align-items: center;
   left: 2px;
   bottom: 2px;
   background-color: rgb(131, 131, 131);
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
@@ -206,14 +212,11 @@ input:checked + .slider:before {
 
 /* offers container */
 
-
 @media only screen and (max-width: 50em) {
   .offers__navigation--sort-container {
-    display: none !important
+    display: none !important;
   }
-  .offers__navigation--container p{
+  .offers__navigation--container p {
     font-size: 0.8em;
   }
 }
-
-
