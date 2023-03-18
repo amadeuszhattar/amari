@@ -85,7 +85,19 @@ const toggleSubscriptionBtn = function () {
   });
 };
 
-toggleSubscriptionBtn()
+toggleSubscriptionBtn();
+
+const sortingOffers = function () {
+  const mainContainer = document.querySelector(".offers__main--container");
+  mainContainer.addEventListener("click", function (e) {
+    const clicked = e.target;
+    const locItem = e.target.closest(".offers__loc--item");
+    if (!locItem) return;
+    else console.log(locItem.value);
+  });
+};
+
+sortingOffers()
 
 // helper functions
 // const sortPopupRemove = function () {
