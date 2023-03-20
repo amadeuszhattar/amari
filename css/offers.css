@@ -1,7 +1,7 @@
 @import './variables.css';
 
 body {
-  background-color: rgb(43, 43, 43);
+  background-color: rgb(32, 32, 32);
 }
 .offers__box--container{
   position: relative;
@@ -13,9 +13,9 @@ body {
 .offers__box {
   position: relative;
   cursor: pointer;
-  color: white;
+  color: var(--font);
   border-radius: 1em;
-  background-color: rgb(61, 61, 61);
+  background-color: var(--background);
   padding: 0.5em 1em;
   height: 3.5em;
   display: flex;
@@ -33,7 +33,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: var(--imageBackground);
   border-radius: 1em;
   width: fit-content;
   padding: 0.8em;
@@ -75,11 +75,11 @@ body {
 }
 
 .offers__amount,.offers__amount--mobile  {
-  color: rgb(101, 168, 0);
+  color: var(--wage);
 }
 .offers__new {
   font-size: 0.7em;
-  background-color: gray;
+  background-color: var(--newOffer);
   padding: 0.3em 0.7em;
   border-radius: 3em;
 }
@@ -103,7 +103,7 @@ body {
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: rgb(61, 61, 61);
+  background-color: var(--background);
   transform: translateY(-.5em);
   opacity: 0;
   visibility: hidden;
@@ -127,7 +127,7 @@ body {
 }
 
 .offers__city--item:hover{
-  background-color: grey;
+  background-color: var(--hoverSalary);
 }
 
 .offers__info--expand--box{
@@ -143,8 +143,8 @@ body {
 
 .offers__remote--button{
   font-size: 0.7em;
-  color: rgb(245, 118, 118);
-  background-color: rgb(83, 83, 83);
+  color: var(--remote);
+  background-color: var(--remoteOffer);
   border-radius: 1em;
   padding: 0.3em 0.7em;
 }
@@ -157,7 +157,7 @@ body {
 .offers__tech--item {
   text-transform: lowercase;
   font-size: 0.7em;
-  background-color: rgb(34, 34, 34);
+  background-color: var(--techItem);
   padding: 0.3em 0.7em;
   border-radius: 3em;
   min-width: 0em;
