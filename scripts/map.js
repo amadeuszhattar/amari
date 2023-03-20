@@ -3,8 +3,6 @@ const API_URL = "../dev-data/map.json";
 const DESKTOP_ZOOM_LEVEL = 10
 const MOBILE_ZOOM_LEVEL = 14
 const mapContainer = document.querySelector("#map");
-const mapOpenBtn = document.querySelector(".map__open--button");
-const mapCloseBtn = document.querySelector(".map__close--button");
 const mapCloseContainer = document.querySelector(".map__close--container");
 const mapOpenContainer = document.querySelector(".map__open--container");
 const map = L.map("map");
@@ -54,6 +52,7 @@ const renderIcon = async function () {
 };
 
 renderIcon();
+
 const createIcon = function (iconData) {
   return L.icon({
     iconSize: [30, 30],
@@ -125,16 +124,28 @@ const markerOnOut = function (marker) {
 
 // handling map buttons
 
-mapOpenBtn.addEventListener("click", function (e) {
-  mapContainer.style.display = "block";
-  mapOpenContainer.style.display = "none";
-  mapCloseContainer.style.display = "block";
-  map.invalidateSize(true)
-});
+const openingMap = function(){
+  const mapOpenBtn = document.querySelector(".map__open--button");
+  mapOpenBtn.addEventListener("click", function (e) {
+    mapContainer.style.display = "block";
+    mapOpenContainer.style.display = "none";
+    mapCloseContainer.style.display = "block";
+    map.invalidateSize(true)
+  });
+}
 
-mapCloseBtn.addEventListener("click", function (e) {
-  mapContainer.style.display = "none";
-  mapOpenContainer.style.display = "block";
-  mapCloseContainer.style.display = "none";
-});
+openingMap()
+
+const closingMap = function(){
+  const mapCloseBtn = document.querySelector(".map__close--button");
+  mapCloseBtn.addEventListener("click", function (e) {
+    mapContainer.style.display = "none";
+    mapOpenContainer.style.display = "block";
+    mapCloseContainer.style.display = "none";
+  });
+}
+
+closingMap()
+
+
 
