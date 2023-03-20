@@ -6,6 +6,8 @@
     --hover: #f06292;
     --background: rgb(44, 44, 44);
     --darkerFont:#9e9e9e;
+    --activeSalary: #181818;
+    --hoverSalary: #606060;
   }
 
   body{
