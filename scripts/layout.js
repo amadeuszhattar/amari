@@ -1,29 +1,35 @@
-// const navLeft = document.querySelector(".offers__navigation--left");
+//
 
 // const sortContainer = document.querySelector(
 //   ".offers__navigation--sort-container"
 // );
 // const sortArrow = document.querySelector(".offers__sort--arrow");
 // const sortPopup = document.querySelector(".offers__sort--menu");
-// const offersLeftBtn = document.querySelectorAll(
-//   ".offers__left--button--container"
-// );
+
 // const overlay = document.querySelector(".overlay");
 // const mainbox = document.querySelector(".offers__main--container");
 
 // left nav handlers
-// navLeft.addEventListener("click", function (e) {
-//   const cur = e.target.closest(".offers__left--button--container");
-//   if (!cur) return;
-//   if (!cur.classList.contains("offers__left--button--active")) {
-//     offersLeftBtn.forEach((btn) =>
-//       btn.classList.remove("offers__left--button--active")
-//     );
-//     offersLeftBtn.forEach((btn) => btn.classList.add("left__button--hover"));
-//     cur.classList.add("offers__left--button--active");
-//     cur.classList.remove("left__button--hover");
-//   }
-// });
+const leftNavEvents = function () {
+  const navLeft = document.querySelector(".offers__navigation--left");
+  const offersLeftBtn = document.querySelectorAll(
+    ".offers__left--button--container"
+  );
+  navLeft.addEventListener("click", function (e) {
+    const cur = e.target.closest(".offers__left--button--container");
+    if (!cur) return;
+    if (!cur.classList.contains("offers__left--button--active")) {
+      offersLeftBtn.forEach((btn) =>
+        btn.classList.remove("offers__left--button--active")
+      );
+      offersLeftBtn.forEach((btn) => btn.classList.add("left__button--hover"));
+      cur.classList.add("offers__left--button--active");
+      cur.classList.remove("left__button--hover");
+    }
+  });
+};
+
+leftNavEvents();
 
 // mainbox.addEventListener('click', function(e){
 //   const cur = e.target
@@ -36,7 +42,7 @@
 //   }
 // })
 
-// right nav hadlers
+// right nav handlers
 // document.addEventListener("click", function (e) {
 //   const sortBtn = e.target.closest('.offers__navigation--sort-container')
 //   if (!sortArrow.classList.contains("offers__sort--arrow--active") && sortBtn) {
@@ -97,7 +103,7 @@ const sortingOffers = function () {
   });
 };
 
-sortingOffers()
+sortingOffers();
 
 // helper functions
 // const sortPopupRemove = function () {

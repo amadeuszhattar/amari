@@ -1,20 +1,18 @@
-* {
-  padding: 0;
-  margin: 0;
-}
+@import "./variables.css";
+
 body {
-  color: white;
-  background-color: rgb(44, 44, 44);
+  color: var(--font);
+  background-color: var(--background);
 }
 
 /* main container  */
 .offers__main--container {
   position: relative;
   height: 100vh;
-  background-color: rgb(44, 44, 44);
+  background-color: var(--background);
 }
 
-.overlay {
+/* .overlay {
   background-color: transparent;
   position: absolute;
   height: 100vh;
@@ -25,7 +23,8 @@ body {
 
 .hidden {
   display: none;
-}
+} */
+
 /* nav container  */
 .offers__navigation--container {
   display: flex;
@@ -33,28 +32,24 @@ body {
   align-items: center;
 }
 
-.offers__navigation--right {
-  display: flex;
-  gap: 1em;
-}
-
-.offers__navigation--left {
+.offers__navigation--right, .offers__navigation--left {
   display: flex;
 }
 
 /* navigation left styles */
 .left__button--hover:hover {
-  background-color: rgb(65, 65, 65);
+  background-color: var(--hoverSalary);
 }
 
 .offers__navigation--left div,.offers__navigation--right div {
-  padding: 0.5em;
+  padding: 0em 0.5em;
   cursor: pointer;
+  display: flex;
 }
 
 /*  buttons active class */
 .offers__left--button--active {
-  background-color: rgb(36, 36, 36);
+  background-color: var(--activeSalary);
 }
 
 /* nav icons sizing */
@@ -66,16 +61,10 @@ p {
   display: flex;
 }
 span {
-  color: red;
+  color: var(--active);
 }
 
 /*  sort menu styling */
-
-.offers__navigation--right > div {
-  cursor: pointer;
-  gap: 0.1em;
-  display: flex;
-}
 
 .offers__navigation--sub--container {
   opacity: 0;
@@ -88,10 +77,10 @@ span {
   opacity: 1;
 }
 .offers__navigation--sub--container:hover {
-  background-color: rgb(65, 65, 65);
+  background-color: var(--hoverSalary);
 }
 
-.offers__sort--menu {
+/* .offers__sort--menu {
   position: absolute;
   right: 1%;
   background-color: rgba(255, 255, 255, 0.08);
@@ -100,17 +89,17 @@ span {
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s ease;
-}
+} */
 
-.offers__sort--menu--link {
+/* .offers__sort--menu--link {
   list-style-type: none;
   padding: 1em;
 }
 .offers__sort--menu--link:hover {
   background-color: gray;
-}
+} */
 
-.offers__sort--menu--active {
+/* .offers__sort--menu--active {
   transform: translateY(0em);
   opacity: 1;
   visibility: visible;
@@ -118,22 +107,23 @@ span {
 
 .offers__navigation--sort {
   cursor: pointer;
-}
+} */
 
-#offers__sort--scope {
-  background-color: rgb(44, 44, 44);
-  border: none;
-  color: white;
-  box-sizing: border-box;
-  cursor: pointer;
-}
 
-.offers__sort--arrow {
+/* .offers__sort--arrow {
   transition: all 0.2s ease;
 }
 
 .offers__sort--arrow--active {
   transform: rotate(180deg);
+} */
+
+#offers__sort--scope {
+  background-color: var(--background);
+  border: none;
+  color: var(--font);
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
 /* switch input styles */
@@ -174,7 +164,7 @@ span {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #383838;
+  background-color: var(--activeSalary);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -186,13 +176,13 @@ span {
   width: 12px;
   left: 2px;
   bottom: 2px;
-  background-color: rgb(131, 131, 131);
+  background-color: var(--background);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #f36c6c;
+  background-color: var(--active);
 }
 
 input:checked + .slider:before {

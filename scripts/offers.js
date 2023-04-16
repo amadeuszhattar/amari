@@ -10,7 +10,11 @@ const extraMenuLocation = function () {
     const clicked = e.target;
     const locItem = clicked.closest(".offers__city--item");
     if (locItem) {
-      console.log(locItem.dataset.type);
+      // we can render map on that
+      const coords = locItem.dataset.type
+      const locCoords = coords.split(',').map(el => Number(el));
+      const [lat, lng ] = locCoords
+      console.log(lat, lng);
     }
     const curBox = e.target.closest(".offers__box");
     const cur = clicked.closest(".offers__info--city");

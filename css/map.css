@@ -1,6 +1,7 @@
+@import './variables.css';
 
 .popup__salary--amount {
-  color: rgb(20, 199, 20);
+  color: var(--wage);
 }
 .popup__image{
     width: 2.5em;
@@ -32,8 +33,9 @@
 
 @media screen and (max-width: 75em){
   .map__open--button{
-    background-color: #a0a0a0;
-    color: #FFF;
+    background-color: var(--mapOpen);
+    cursor: pointer;
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
