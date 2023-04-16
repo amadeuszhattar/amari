@@ -202,8 +202,8 @@ color:var(--darkerFont);
     margin-right: 0;
     margin-top: 0;
   }
-}
 
+}
 .modal-header{
   border:none;
 }
@@ -222,4 +222,35 @@ color:var(--darkerFont);
 
 .btn-close{
   color: red!important;
+}
+
+
+/* MOBILE */
+@media (min-width: 1600px){
+.navbar-expand-lg {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+}
+
+@media screen and (max-width: 1300px){
+.logo-title{
+  border:1px solid red;
+  font-size: 13px;
+}
+}
+
+@media screen and (max-width: 1250px){
+  .logo-title{
+    display: none;
+  }
+  }
+
+@media screen and (max-width:1000px){
+  .menu{
+    display: none;
+  }
+  .sign-in button{
+    display: inline!important;
+  }
 }
