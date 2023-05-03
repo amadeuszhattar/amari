@@ -1,21 +1,20 @@
 @import "variables.css";
 
-body{
-    margin: 0;
-    padding: 0;
-}
 header{
   background-color: var(--background);
-  padding:2em;
+  padding:1.5em;
+}
+.buttons-navbar{
+  display: flex;
+  align-items: center;
+  gap: 2em;
 }
 .search-click {
     border: 1px solid #ccc;
     outline: none;
-    background-size: 22px;
-    background-position: 13px;
-    border-radius: 10px;
-    width: 15em;
-    height: 5em;
+    border-radius: 32px;
+    width: 12em;
+    height: 20px;
     padding: 5px;
     transition: all 0.5s;
   }
@@ -26,7 +25,8 @@ header{
   .search-click {
     position: relative;
     overflow: hidden;
-    height: 20px;
+    height: 30px;
+    padding: 1em;
   }
   .search-click input {
     background: transparent;
@@ -39,63 +39,62 @@ header{
     padding: 10px;
   }
 
-/* Style the button */
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-  transition: all 0.3s ease-in-out;
-}
+  .dropdown {
+    border-radius: 32px;
+    text-transform: none;
+    font-weight: 600;
+    font-size: 14px;
+    width: 12em;
+    height: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgb(57, 57, 57);
+    border-color: rgb(57, 57, 57);
+    -webkit-box-pack: justify;
+    transition: all 0.5s;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--background);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px;
+    z-index: 1;
+  }
+  .dropdown a{
+    text-decoration: none;
+    color:var(--font);
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    animation-name: fadeInDown;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes fadeInDown {
+    from {opacity: 0; transform: translate3d(0, -10%, 0);}
+    to {opacity: 1; transform: none;}
+  }
+ 
+  .technologies-icons{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+  }
 
-/* Style the dropdown content */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 2;
+.cluster-icon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-/* Style the links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  transition: all 0.3s ease-in-out;
+.filter{
+  padding-left: 10em;
 }
-
-/* Show the dropdown menu on click */
-.dropdown.clicked .dropdown-content {
-  display: block;
-}
-
-/* Rotate the dropdown icon on click */
-.dropdown.clicked .dropbtn i {
-  transform: rotate(180deg);
-}
-
-/* Add a background color to the dropdown button on hover */
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
-}
-
-/* Style the dropdown icon */
-.dropdown .dropbtn i {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: all 0.3s ease-in-out;
-}
-
-/* Add a hover effect to the links inside the dropdown */
-.dropdown-content a:hover {
-  background-color: #ddd;
+.filter button{
+  font-weight: 700;
 }
