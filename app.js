@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express')
 const app = express()
 
@@ -8,8 +9,11 @@ const server = app.listen(port, () => {
 
 // using templates
 app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));  
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.render('base')
   })
