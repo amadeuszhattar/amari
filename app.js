@@ -11,6 +11,7 @@ app.set('view engine', 'pug');
 // app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'node_modules')));
 
 app.get('/mariusz', (req, res) => {
   res.render('base');

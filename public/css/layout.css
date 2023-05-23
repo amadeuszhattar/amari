@@ -8,7 +8,6 @@ body {
 /* main container  */
 .offers__main--container {
   position: relative;
-  height: 100vh;
   background-color: var(--background);
 }
 

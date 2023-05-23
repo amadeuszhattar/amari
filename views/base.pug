@@ -6,90 +6,16 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Document
     link(rel='stylesheet', href='css/offers.css')
-    script(src='https://kit.fontawesome.com/b160ac93e6.js', crossorigin='anonymous')
+    link(rel='stylesheet', href='css/base.css')
+    link(rel='stylesheet', href='leaflet/dist/leaflet.css')
+    link(rel='stylesheet', href='css/map.css')
+    script(src='leaflet/dist/leaflet.js')
+    script(src='leaflet.smooth_marker_bouncing/dist/bundle.js')
+    // End leaflet
+    script(defer='', src='scripts/map.js')
     script(defer='', src='scripts/offers.js')
+    script(src='https://kit.fontawesome.com/b160ac93e6.js', crossorigin='anonymous')
   body
-    .offers__box--container
-      .offers__box
-        .offers__box--image
-          img.offers__image(src='../tech-icons/testimage.webp', alt='')
-        .offers__info--container
-          .offers__info--top
-            .offers__info--title
-              h3.offers__title Nodejs git developer
-            .offers__info--salary
-              p.offers__amount 30000 - 30000 PLN
-              p.offers__new New
-          .offers__info--bottom
-            .offers__info--salary--mobile
-              p.offers__amount--mobile 30k - 35k PLN
-            .offers__info--city--mobile
-              p.offers__city London, Fully Remote
-              img(src='../tech-icons/icons8-place-marker-16.png', alt='')
-            .offers__info--location
-              .offers__info--company
-                img(src='../tech-icons/icons8-organization-16.png', alt='')
-                p Google
-              .offers__info--city
-                img(src='../tech-icons/icons8-place-marker-16.png', alt='')
-                p.offers__city London
-                .offers__info--expand--box
-                  img.offers__info--expand(src='../tech-icons/icons8-expand-arrow-16.png', alt='')
-              .offers__info--remote
-                p.offers__remote--button Fully Remote
-            .offers__info--stack
-              p.offers__tech--item javascript
-              p.offers__tech--item css
-              p.offers__tech--item html
-        .offers__city--list
-          .offers__city--item(data-type='51.505,-0.100')
-            img(src='../tech-icons/icons8-place-marker-16.png', alt='')
-            p Liverpool, Center
-          .offers__city--item(data-type='51.505,-0.200')
-            img(src='../tech-icons/icons8-place-marker-16.png', alt='')
-            p Liverpool, Center
-          .offers__city--item(data-type='51.505,-0.300')
-            img(src='../tech-icons/icons8-place-marker-16.png', alt='')
-            p Liverpool, Center
-      .offers__box
-        .offers__box--image
-          img.offers__image(src='../tech-icons/testimage.webp', alt='')
-        .offers__info--container
-          .offers__info--top
-            .offers__info--title
-              h3.offers__title Nodejs git developer
-            .offers__info--salary
-              p.offers__amount 30000 - 30000 PLN
-              p.offers__new New
-          .offers__info--bottom
-            .offers__info--salary--mobile
-              p.offers__amount--mobile 30k - 35k PLN
-            .offers__info--city--mobile
-              p.offers__city London, Fully Remote
-              img(src='../tech-icons/icons8-place-marker-16.png', alt='')
-            .offers__info--location
-              .offers__info--company
-                img(src='../tech-icons/icons8-organization-16.png', alt='')
-                p Google
-              .offers__info--city
-                img(src='../tech-icons/icons8-place-marker-16.png', alt='')
-                p.offers__city London
-                .offers__info--expand--box
-                  img.offers__info--expand(src='../tech-icons/icons8-expand-arrow-16.png', alt='')
-              .offers__info--remote
-                p.offers__remote--button Fully Remote
-            .offers__info--stack
-              p.offers__tech--item javascript
-              p.offers__tech--item css
-              p.offers__tech--item html
-        .offers__city--list
-          .offers__city--item(data-type='51.505,-0.400')
-            img(src='../tech-icons/icons8-place-marker-16.png', alt='')
-            p Manchester, Center
-          .offers__city--item(data-type='51.505,-0.500')
-            img(src='../tech-icons/icons8-place-marker-16.png', alt='')
-            p Manchester, Center
-          .offers__city--item(data-type='51.505,-0.600')
-            img(src='../tech-icons/icons8-place-marker-16.png', alt='')
-            p Manchester, Center
-      .overlay.hidden
+    .root
+      include offers.pug 
+      include map.pug

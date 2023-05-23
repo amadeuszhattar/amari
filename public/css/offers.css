@@ -4,6 +4,7 @@ body {
   background-color: rgb(32, 32, 32);
 }
 .offers__box--container{
+  flex: 1;
   position: relative;
   display: flex;
   flex-direction: column;

@@ -1,10 +1,13 @@
 @import './variables.css';
 
+.map__container {
+  flex: 1;
+}
 .popup__salary--amount {
   color: var(--wage);
 }
-.popup__image{
-    width: 2.5em;
+.popup__image {
+  width: 2.5em;
 }
 .popup__container {
   display: flex;
@@ -19,20 +22,21 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
- 
 
-#map{
+#map {
   height: 100vh;
   position: relative;
 }
 
-.map__close--container{
+.map__close--container {
   display: none;
 }
 
-
-@media screen and (max-width: 75em){
-  .map__open--button{
+.map__open--container {
+  display: none;
+}
+@media screen and (max-width: 75em) {
+  .map__open--button {
     background-color: var(--mapOpen);
     cursor: pointer;
     color: var(--white);
@@ -46,25 +50,26 @@
     width: 10em;
   }
 
-  .map__open--container{
+  .map__open--container {
+    display: block;
     position: absolute;
     right: 50%;
     bottom: 3%;
     transform: translate(50%, 3%);
     z-index: 1000;
   }
-  .map__close--container{
+  .map__close--container {
     position: absolute;
     right: 0.5em;
     top: 0.5em;
     z-index: 1000;
     display: none;
   }
-  .map__close--button{
+  .map__close--button {
     width: 3em;
   }
 
-  #map{
+  #map {
     display: none;
   }
 }

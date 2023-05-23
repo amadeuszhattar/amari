@@ -1,0 +1,47 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Document
+    link(rel='stylesheet', href='/css/layout.css')
+    script(defer='', src='/scripts/layout.js')
+  body
+    .offers__main--container
+      .offers__navigation--container
+        .offers__navigation--left
+          .offers__left--button--container.offers__left--button--active
+            p.offers__left--button With salary
+          .offers__left--button--container.left__button--hover
+            p.offers__left--button
+              | All offers&nbsp;
+              span 14 682
+        .offers__navigation--right
+          .offers__navigation--sub--container
+            img.offers__sub--image(src='../tech-icons/bell.svg', alt='')
+            p.offers__sub--button Subscribe
+          .offers__remote--input--container
+            p.offers__remote--text- Remote&nbsp;
+            label.switch
+              input.offers__remote--input(type='checkbox')
+              span.slider.round
+          .offers__navigation--sort-container
+            //
+              <p class="offers__navigation--sort">Latest&nbsp;</p>
+              <img
+              class="offers__sort--arrow"
+              src="./tech-icons/icons8-expand-arrow-16.png"
+              alt=""
+              />
+            select#offers__sort--scope(name='sortmenu')
+              option.offers__loc--item(value='latest') Latest
+              option.offers__loc--item(value='highest') Highest Salary
+              option.offers__loc--item(value='lowest') Lowest Salary
+      //
+        <div class="offers__sort--menu">
+        <li class="offers__sort--menu--link">Latest</li>
+        <li class="offers__sort--menu--link">Highest salary</li>
+        <li class="offers__sort--menu--link">Lowest salary</li>
+        </div>
+        <div class="overlay hidden">

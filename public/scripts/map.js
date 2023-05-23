@@ -1,11 +1,11 @@
-"use strict";
-const API_URL = "../dev-data/map.json";
-const DESKTOP_ZOOM_LEVEL = 10
-const MOBILE_ZOOM_LEVEL = 14
-const mapContainer = document.querySelector("#map");
-const mapCloseContainer = document.querySelector(".map__close--container");
-const mapOpenContainer = document.querySelector(".map__open--container");
-const map = L.map("map");
+'use strict';
+const API_URL = '../dev-data/map.json';
+const DESKTOP_ZOOM_LEVEL = 10;
+const MOBILE_ZOOM_LEVEL = 14;
+const mapContainer = document.querySelector('#map');
+const mapCloseContainer = document.querySelector('.map__close--container');
+const mapOpenContainer = document.querySelector('.map__open--container');
+const map = L.map('map');
 
 // default map container
 const renderMap = function (lat, lng, zoom) {
@@ -13,17 +13,14 @@ const renderMap = function (lat, lng, zoom) {
     animate: true,
     pan: {
       duration: 1,
-    }
+    },
   });
-  L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
-    {
-      subdomains: "abcd",
-      maxZoom: 20,
-    }
-  ).addTo(map)
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    subdomains: 'abcd',
+    maxZoom: 20,
+  }).addTo(map);
 };
-renderMap(51.505, -0.200, DESKTOP_ZOOM_LEVEL);
+renderMap(51.505, -0.2, DESKTOP_ZOOM_LEVEL);
 
 // fetch data
 const getJson = async function (url) {
@@ -69,14 +66,14 @@ const createMarker = function (iconData) {
     .setBouncingOptions({
       bounceHeight: 20, // height of the bouncing
       bounceSpeed: 100, // bouncing speed coefficient
-      exclusive: true,  // if this marker is bouncing all others must stop
+      exclusive: true, // if this marker is bouncing all others must stop
       elastic: false,
     })
     .addTo(map)
-    .on("click", function (e) {
-      if(this.map) return
+    .on('click', function (e) {
+      if (this.map) return;
       this.toggleBouncing();
-      renderMap(lat, lng, DESKTOP_ZOOM_LEVEL)
+      renderMap(lat, lng, DESKTOP_ZOOM_LEVEL);
     });
 };
 
@@ -85,8 +82,8 @@ const createMarker = function (iconData) {
 const createPopup = function (data) {
   return L.popup({
     offset: [0, -10],
-    className: "popup__test",
-    closeOnClick: "*",
+    className: 'popup__test',
+    closeOnClick: '*',
     closeButton: false,
     content: createMarkup(data),
     maxWidth: 200,
@@ -110,42 +107,43 @@ const createMarkup = function (popupData) {
 };
 
 const markerOnHover = function (marker, popup) {
-  marker.on("mouseover", function (e) {
+  marker.on('mouseover', function (e) {
     this.bindPopup(popup);
     this.openPopup();
   });
 };
 
 const markerOnOut = function (marker) {
-  marker.on("mouseout", function (e) {
+  marker.on('mouseout', function (e) {
     this.closePopup();
   });
 };
 
 // handling map buttons
 
-const openingMap = function(){
-  const mapOpenBtn = document.querySelector(".map__open--button");
-  mapOpenBtn.addEventListener("click", function (e) {
-    mapContainer.style.display = "block";
-    mapOpenContainer.style.display = "none";
-    mapCloseContainer.style.display = "block";
-    map.invalidateSize(true)
+const openingMap = function () {
+  const offersContainer = document.querySelector('.offers__box--container');
+  const mapOpenBtn = document.querySelector('.map__open--button');
+  mapOpenBtn.addEventListener('click', function (e) {
+    mapContainer.style.display = 'block';
+    mapOpenContainer.style.display = 'none';
+    mapCloseContainer.style.display = 'block';
+    offersContainer.style.display = 'none';
+    map.invalidateSize(true);
   });
-}
+};
 
-openingMap()
+openingMap();
 
-const closingMap = function(){
-  const mapCloseBtn = document.querySelector(".map__close--button");
-  mapCloseBtn.addEventListener("click", function (e) {
-    mapContainer.style.display = "none";
-    mapOpenContainer.style.display = "block";
-    mapCloseContainer.style.display = "none";
+const closingMap = function () {
+  const offersContainer = document.querySelector('.offers__box--container');
+  const mapCloseBtn = document.querySelector('.map__close--button');
+  mapCloseBtn.addEventListener('click', function (e) {
+    mapContainer.style.display = 'none';
+    mapOpenContainer.style.display = 'block';
+    mapCloseContainer.style.display = 'none';
+    offersContainer.style.display = 'block';
   });
-}
+};
 
-closingMap()
-
-
-
+closingMap();
