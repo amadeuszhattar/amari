@@ -1,14 +1,15 @@
 @import './variables.css';
 
-body {
+/* body {
   background-color: rgb(32, 32, 32);
-}
+} */
 .offers__box--container{
   flex: 1;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 1em;
+  padding: .5em;
 }
 
 .offers__box {
@@ -164,7 +165,7 @@ body {
   min-width: 0em;
 }
 
-.overlay{
+.overlay{ 
   cursor: pointer;
   top: 0;
   left: 0;

@@ -52,7 +52,7 @@ body {
 }
 
 /* nav icons sizing */
-img {
+.offers__sub--image{
   width: 15px;
 }
 p {
