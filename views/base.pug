@@ -1,5 +1,24 @@
-html
-    head
-    body
-        h1 Hello World
-        h2 co tam
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Document
+    link(rel='stylesheet', href='css/offers.css')
+    link(rel='stylesheet', href='css/base.css')
+    link(rel='stylesheet', href='css/layout.css')
+    link(rel='stylesheet', href='leaflet/dist/leaflet.css')
+    link(rel='stylesheet', href='css/map.css')
+    script(src='leaflet/dist/leaflet.js')
+    script(src='leaflet.smooth_marker_bouncing/dist/bundle.js')
+    // End leaflet
+    script(defer='', src='scripts/map.js')
+    script(defer='', src='scripts/offers.js')
+    script(defer='', src='scripts/layout.js')
+    script(src='https://kit.fontawesome.com/b160ac93e6.js', crossorigin='anonymous')
+  body
+    include layout.pug 
+    .offers-root
+      include offers.pug 
+      include map.pug
