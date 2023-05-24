@@ -1,0 +1,32 @@
+{
+  "icons": [
+    {
+      "src": "/tech-icons/all.png",
+      "alt": "All"
+    },
+    {
+      "src": "/tech-icons/js.svg",
+      "alt": "JavaScript"
+    },
+    {
+      "src": "/tech-icons/html.png",
+      "alt": "HTML"
+    },
+    {
+      "src": "/tech-icons/ruby.png",
+      "alt": "Ruby"
+    },
+    {
+      "src": "/tech-icons/python.png",
+      "alt": "Python"
+    },
+    {
+      "src": "/tech-icons/nodejs.png",
+      "alt": "Node.js"
+    },
+    {
+      "src": "/tech-icons/php.png",
+      "alt": "PHP"
+    }
+  ]
+}

@@ -1,100 +1,110 @@
-@import "variables.css";
+@import 'variables.css';
 
-header{
+header {
   background-color: var(--background);
-  padding:1.5em;
+  padding: 1.5em;
 }
-.buttons-navbar{
+.buttons-navbar {
   display: flex;
   align-items: center;
   gap: 2em;
 }
 .search-click {
-    border: 1px solid #ccc;
-    outline: none;
-    border-radius: 32px;
-    width: 12em;
-    height: 20px;
-    padding: 5px;
-    transition: all 0.5s;
-  }
-  .search-click:focus {
-    width: 30em;
-    padding-left: 2em;
-  }
-  .search-click {
-    position: relative;
-    overflow: hidden;
-    height: 30px;
-    padding: 1em;
-  }
-  .search-click input {
-    background: transparent;
-    border: 1px solid #ccc;
-    outline: none;
-    position: absolute;
-    width: 300px;
-    height: 50px;
-    left: 0%;
-    padding: 10px;
-  }
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 32px;
+  width: 12em;
+  height: 20px;
+  padding: 5px;
+  transition: all 0.5s;
+}
+.search-click:focus {
+  width: 30em;
+  padding-left: 2em;
+}
+.search-click {
+  position: relative;
+  overflow: hidden;
+  height: 30px;
+  padding: 1em;
+}
+.search-click input {
+  background: transparent;
+  border: 1px solid #ccc;
+  outline: none;
+  position: absolute;
+  width: 300px;
+  height: 50px;
+  left: 0%;
+  padding: 10px;
+}
 
-  .dropdown {
-    border-radius: 32px;
-    text-transform: none;
-    font-weight: 600;
-    font-size: 14px;
-    width: 12em;
-    height: 20px;
-    color: rgba(255, 255, 255, 0.8);
-    background: rgb(57, 57, 57);
-    border-color: rgb(57, 57, 57);
-    -webkit-box-pack: justify;
-    transition: all 0.5s;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--background);
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 10px;
-    z-index: 1;
-  }
-  .dropdown a{
-    text-decoration: none;
-    color:var(--font);
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-    animation-name: fadeInDown;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-  }
-  
-  @keyframes fadeInDown {
-    from {opacity: 0; transform: translate3d(0, -10%, 0);}
-    to {opacity: 1; transform: none;}
-  }
- 
-  .technologies-icons{
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-  }
+.dropdown {
+  border-radius: 32px;
+  text-transform: none;
+  font-weight: 600;
+  font-size: 14px;
+  width: 12em;
+  height: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgb(57, 57, 57);
+  border-color: rgb(57, 57, 57);
+  -webkit-box-pack: justify;
+  transition: all 0.5s;
+}
 
-.cluster-icon{
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--background);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1;
+}
+.dropdown a {
+  text-decoration: none;
+  color: var(--font);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  animation-name: fadeInDown;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -10%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.technologies-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+
+.cluster-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.filter{
+.filter {
   padding-left: 10em;
 }
-.filter button{
+.filter button {
   font-weight: 700;
+}
+
+.dropdown.filter {
+  margin-left: auto;
 }
